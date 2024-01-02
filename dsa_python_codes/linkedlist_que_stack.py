@@ -20,7 +20,8 @@ class Linkedlist:
         else:
             newnode.next = self.head
             self.head = newnode
-    def insert_sep(self,data,index):
+
+    def insert_sep(self, data, index):
         newnode = Node(data)
         position = 0
         currentnode = self.head
@@ -29,17 +30,45 @@ class Linkedlist:
         else:
             while (currentnode != None and position != index):
                 position += 1
+                currentnode = currentnode.next
             if currentnode != None:
                 newnode.next = currentnode.next
                 currentnode.next = newnode
             else:
                 print("wrong index")
-    def remove_beg(self):
-        pass
-    def remove_end(self):
-        pass
-    def remove_sep(self):
-        pass
+
+    def remove_que(self):
+        if self.head is None:
+            print("removing from a  already  empty LL")
+        else:
+            currentnode = self.head
+            currentnode = currentnode.next
+            self.head = currentnode
+
+    def remove_stack(self):
+        if self.head is None:
+            print("messingh up with  empty LL")
+        else:
+            currentnode = self.head
+            while (currentnode.next.next):
+                currentnode = currentnode.next
+            currentnode.next = None
+
+    def remove_sep(self, index):
+        pos = 0
+        currentnode = self.head
+        if self.head is None:
+            print("empty LL")
+        else:
+            if pos == index:
+                self.remove_que()
+            else:
+                while (currentnode != None and pos + 1 != index):
+                    pos += 1
+                    currentnode = currentnode.next
+
+                currentnode.next = currentnode.next.next
+
     def show(self):
         pass
     def update(self):

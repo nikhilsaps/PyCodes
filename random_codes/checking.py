@@ -34,6 +34,7 @@ class Linkedlist:
         else :
             while (currentnode!=None and position !=index):
                 position+=1
+                currentnode = currentnode.next
             if currentnode!=None:
                 newnode.next=currentnode.next
                 currentnode.next=newnode
@@ -62,6 +63,21 @@ class Linkedlist:
                 currentnode=currentnode.next
             currentnode.next=None
 
+    def remove_sep(self,index):
+        pos=0
+        currentnode=self.head
+        if self.head is None:
+            print("empty LL")
+        else :
+            if pos == index:
+                self.remove_que()
+            else:
+                while (currentnode!=None and pos+1!=index):
+                    pos+=1
+                    currentnode=currentnode.next
+
+                currentnode.next=currentnode.next.next
+
 
 
     def update(self):
@@ -77,8 +93,8 @@ def main():
     Llist.insert_end(3)
     Llist.insert_end(4)
     Llist.insert_end(5)
-    Llist.remove_stack()
-    Llist.remove_stack()
+    Llist.show()
+    Llist.remove_sep(2)
     Llist.show()
 
 
