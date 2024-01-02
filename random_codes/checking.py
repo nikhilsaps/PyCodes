@@ -80,8 +80,20 @@ class Linkedlist:
 
 
 
-    def update(self):
-        pass
+    def update(self,value,index):
+        pos=0
+        currentnode=self.head
+        if self.head is None:
+            currentnode.data=value
+        else:
+            while( currentnode!=None and pos!=index):
+                pos+=1
+                currentnode=currentnode.next
+            if currentnode!=None:
+                currentnode.data=value
+
+
+
 
 
 
@@ -94,7 +106,7 @@ def main():
     Llist.insert_end(4)
     Llist.insert_end(5)
     Llist.show()
-    Llist.remove_sep(2)
+    Llist.update(99,0)
     Llist.show()
 
 

@@ -3,7 +3,9 @@ class Node:
         self.data=data
         self.next=None
 class Linkedlist:
-    def insert_beg(self, data):
+    def __init__(self):
+        self.head = None
+    def insert_end(self, data):
         if self.head is None:
             newnode = Node(data)
             self.head = newnode
@@ -13,7 +15,7 @@ class Linkedlist:
             while (currentnode.next):
                 currentnode = currentnode.next
             currentnode.next = newnode
-    def insert_end(self,data):
+    def insert_beg(self,data):
         newnode = Node(data)
         if self.head is None:
             self.head = newnode
@@ -26,7 +28,7 @@ class Linkedlist:
         position = 0
         currentnode = self.head
         if position == index:
-            self.insert_bg(data)
+            self.insert_beg(data)
         else:
             while (currentnode != None and position != index):
                 position += 1
@@ -41,16 +43,17 @@ class Linkedlist:
         if self.head is None:
             print("removing from a  already  empty LL")
         else:
-            currentnode = self.head
-            currentnode = currentnode.next
-            self.head = currentnode
+            self.head=self.head.next
 
     def remove_stack(self):
         if self.head is None:
-            print("messingh up with  empty LL")
+            print("messing up with an empty LL")
+        elif self.head.next is None:
+            # If there is only one element in the list
+            self.head = None
         else:
             currentnode = self.head
-            while (currentnode.next.next):
+            while currentnode.next.next:
                 currentnode = currentnode.next
             currentnode.next = None
 
@@ -66,13 +69,29 @@ class Linkedlist:
                 while (currentnode != None and pos + 1 != index):
                     pos += 1
                     currentnode = currentnode.next
+                if currentnode!=None:
+                    currentnode.next = currentnode.next.next
 
-                currentnode.next = currentnode.next.next
+                else:
+                    print("wrong index")
 
     def show(self):
-        pass
-    def update(self):
-        pass
+        current_node = self.head
+        while (current_node):
+            print(current_node.data)
+            current_node = current_node.next
+
+    def update(self, value, index):
+        pos = 0
+        currentnode = self.head
+        if self.head is None:
+            currentnode.data = value
+        else:
+            while (currentnode != None and pos != index):
+                pos += 1
+                currentnode = currentnode.next
+            if currentnode != None:
+                currentnode.data = value
 
 
 
@@ -88,26 +107,33 @@ def main():
         a=int(input("enter the options for above "))
         match a:
             case 1:
-                pass
+                index=int(input("enter the index"))
+                data=int(input("enter the value"))
+                Llist.insert_sep(data,index)
             case 2:
-                pass
+                data = int(input("enter the value"))
+                Llist.insert_beg(data)
             case 3:
-                pass
+                data = int(input("enter the value"))
+                Llist.insert_end(data)
             case 4:
-                pass
+                index = int(input("enter the index"))
+                Llist.remove_sep(index)
             case 5:
-                pass
+                Llist.remove_que()
             case 6:
-                pass
+                Llist.remove_stack()
             case 7:
-                pass
+                Llist.show()
             case 8:
-                pass
+                index = int(input("enter the index"))
+                data = int(input("enter the value"))
+                Llist.update(index=index,value=data)
             case 9:
                 pass
             case 10:
                 pass
-            case 11:
+            case _:
                 pass
 
 
