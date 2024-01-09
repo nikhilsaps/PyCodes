@@ -1,3 +1,4 @@
+
 s=  "nikhil"
 tup=set(s)
 dic={
