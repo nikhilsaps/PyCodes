@@ -6,16 +6,24 @@
 
 
 def bin_to_number(bin_list):
-    index =len(bin_list)
+    index =len(bin_list)-1
     num=0
-    while (index> 0):
-        num=num+2**index
-        index-=1
+    for x in bin_list:
+        num =num +int(x)*(2**index)
+        index -= 1
     return num
 
-binary_input= input("enter the binary number").split()
 
+binary_input= list(input("enter the binary number").split(","))
 
-print(bin_to_number(binary_input))
+for x in binary_input:
+    if (bin_to_number(list(x))%5==0):
+        print(x)
 
-
+#
+# Solution: ```python
+# value = []
+# items=[x for x in input().split(‘,’)]
+# for p in items:
+#     intp = int(p, 2) if not intp%5: value.append(p)
+# print(‘,’.join(value)) ```
