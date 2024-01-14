@@ -3,3 +3,54 @@
 # steps. Please write a program to compute the distance from current position after a sequence of movement and original point. If the
 # distance is a float, then just print the nearest integer. Example: If the following tuples are given as input to the program: UP 5 DOWN 3
 # LEFT 3 RIGHT 2 Then, the output of the program should be: 2
+
+import math
+origin ={
+   'x':0,
+    'y':0
+}
+new_position={
+    'x':0,
+    'y':0
+}
+data =  [x for x in input("enter the  path string").split(" ")]
+print(data)
+
+for x in range(len(data)):
+    if int(x)%2 ==0:
+        if data[x] =='UP':
+            new_position['y']=new_position['y']+int(data[x+1])
+        elif data[x]=='DOWN':
+            new_position['y'] = new_position['y'] - int(data[x+1])
+        elif data[x] =='RIGHT':
+            new_position['x']=new_position['x']+int(data[x+1])
+        elif data[x]=='LEFT':
+            new_position['x'] = new_position['x'] - int(data[x+1])
+
+print(new_position)
+distance = math.sqrt(new_position['x']**2 + new_position['y']**2)
+print(int(distance))
+
+
+
+# import math
+# pos = [0,0]
+# while True:
+# s = input()
+# if not s:
+# break
+# movement = s.split(" ")
+# direction = movement[0]
+# steps = int(movement[1])
+# if direction=="UP":
+# pos[0]+=steps
+# elif direction=="DOWN":
+# pos[0]-=steps
+# elif direction=="LEFT":
+# pos[1]-=steps
+# elif direction=="RIGHT":
+# pos[1]+=steps
+# else:
+# pass
+#  print(int(round(math.sqrt(pos[1]**2+pos[0]**2))))
+
