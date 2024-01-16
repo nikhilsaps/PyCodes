@@ -1,6 +1,6 @@
-import  requests
-import json
+import re
 
+txt ="The rain in Spain"
 
-responce =requests.get("https://api.jikan.moe/v4/anime?q=frierend%20no%20sousao&sfw")
-print(responce.content)
+a = re.search(r"\bS\w+", txt)
+print(type(a),a)
