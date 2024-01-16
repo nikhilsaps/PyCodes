@@ -1,9 +1,6 @@
-import csv
+import  requests
+import json
 
 
-with open('username.csv','r') as csvfile:
-    csvread= csv.reader(csvfile)
-
-    fields = next(csvread)
-    print(fields)
-
+responce =requests.get("https://api.jikan.moe/v4/anime?q=frierend%20no%20sousao&sfw")
+print(responce.content)
