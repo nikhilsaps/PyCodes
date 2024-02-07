@@ -21,4 +21,4 @@ for fl in flist:
         query= f"create table {fl} ( name , size )"
         cur.execute(query)
     else:
-        print(f"this Db {fl} is available")
+        print(f"this Db {fl} is available")d
