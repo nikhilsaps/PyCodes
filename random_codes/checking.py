@@ -1,5 +1,3 @@
-import  random
 
-
-
-print(random.randint(0,9))
+#   nikhil said  "hahahaha" to surya's sister 
+print('''   "hahahaha" to surya's sister''')
