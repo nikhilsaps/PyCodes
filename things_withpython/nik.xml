@@ -1,0 +1,14 @@
+<bound method DataFrame.to_xml of     Unnamed: 0                                      Miscellaneous Unnamed: 2
+0          1.0     Write a program to generate a random password.        yes
+1          2.0  Write a program to implement a basic calculato...     onhold
+2          3.0  Write a program to find the shortest path betw...     onhold
+3          4.0  Write a program to implement a basic text editor.        NaN
+4          5.0  Write a program to implement a basic image edi...        NaN
+..         ...                                                ...        ...
+60         6.0  Write a program to clean and preprocess a data...        NaN
+61         7.0  Write a program to implement a simple recommen...        NaN
+62         8.0  Write a program to implement a sentiment analy...        NaN
+63         9.0  Write a program to implement a basic natural l...        NaN
+64        10.0  Write a program to implement a basic image cla...        NaN
+
+[65 rows x 3 columns]>
