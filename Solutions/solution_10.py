@@ -5,4 +5,14 @@
 # Then, the output should be:
 # again and hello makes perfect practice world
 
+def main():
+    n= [x for x in input("enter the number : ").split(" ")]
+    t=set(n)
+    p=list(t)
+    p.sort()
+    print(p)
+
+
+if __name__=="__main__":
+    main()
 
